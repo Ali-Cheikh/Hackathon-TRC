@@ -42,6 +42,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Persist dark theme in localStorage and rehydrate on load
+  if (typeof window !== 'undefined') {
+    const theme = localStorage.getItem('campus_ai_buddy_theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
   return (
     <html lang="en">
       <body className="font-sans antialiased">

@@ -35,53 +35,54 @@ export default function ConversationSidebar({
 }: ConversationSidebarProps) {
   return (
     <div
-      className={`fixed inset-y-0 left-0 bg-sidebar text-sidebar-foreground w-64 border-r border-sidebar-border flex flex-col transition-transform duration-300 z-40 md:relative md:translate-x-0 ${
+      className={`fixed inset-y-0 left-0 bg-sidebar text-sidebar-foreground w-64 flex flex-col transition-transform duration-300 z-40 md:relative md:translate-x-0 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
       {/* Header */}
-      <div className="p-4 border-b border-sidebar-border flex items-center justify-between gap-2">
-        <h1 className="font-bold text-lg">AI Buddy</h1>
-        <div className="flex items-center gap-1">
-          {/* Settings and Mood buttons on mobile */}
+      <div className="p-4 flex flex-col items-start gap-3">
+        <h1 className="font-bold text-lg w-full text-center">AI Buddy</h1>
+        <div className="flex w-full justify-between md:hidden gap-2">
           <button
             onClick={onShowMoodTracker}
-            className="md:hidden p-1 rounded hover:bg-accent"
+            className="p-2 rounded-full bg-accent text-white hover:bg-primary transition"
             title="Log Mood"
           >
             <span role="img" aria-label="mood">😊</span>
           </button>
           <button
             onClick={onShowSettings}
-            className="md:hidden p-1 rounded hover:bg-accent"
+            className="p-2 rounded-full bg-accent text-white hover:bg-primary transition"
             title="Settings"
           >
             <Settings className="w-5 h-5" />
           </button>
-          <button onClick={onClose} className="md:hidden">
+          <button onClick={onClose} className="p-2 rounded-full bg-muted text-foreground hover:bg-accent transition">
             <X className="w-5 h-5" />
           </button>
         </div>
       </div>
 
-      {/* New Chat Button and Settings/Mood on desktop */}
-      <div className="p-4 flex flex-col gap-2">
-        <Button onClick={onNewConversation} className="w-full gap-2">
+      {/* Main Actions */}
+      <div className="px-4 pt-2 pb-4 flex flex-col gap-3">
+        <Button onClick={onNewConversation} className="w-full gap-2 text-base font-semibold rounded-lg">
           <Plus className="w-4 h-4" />
           New Chat
         </Button>
-        <Button onClick={onShowMoodTracker} className="w-full gap-2 hidden md:flex" variant="outline" size="sm">
-          <span role="img" aria-label="mood">😊</span>
-          Log Mood
-        </Button>
-        <Button onClick={onShowSettings} className="w-full gap-2 hidden md:flex" variant="outline" size="sm">
-          <Settings className="w-4 h-4" />
-          Settings
-        </Button>
-        <Button onClick={onShowMoodTrends} className="w-full gap-2 hidden md:flex" variant="outline" size="sm">
-          📈
-          Mood Trends
-        </Button>
+        <div className="flex flex-col gap-2">
+          <Button onClick={onShowMoodTracker} className="w-full gap-2 hidden md:flex rounded-lg" variant="outline" size="sm">
+            <span role="img" aria-label="mood">😊</span>
+            Log Mood
+          </Button>
+          <Button onClick={onShowSettings} className="w-full gap-2 hidden md:flex rounded-lg" variant="outline" size="sm">
+            <Settings className="w-4 h-4" />
+            Settings
+          </Button>
+          <Button onClick={onShowMoodTrends} className="w-full gap-2 hidden md:flex rounded-lg" variant="outline" size="sm">
+            📈
+            Mood Trends
+          </Button>
+        </div>
       </div>
 
       {/* Conversations List */}
@@ -110,7 +111,7 @@ export default function ConversationSidebar({
                     e.stopPropagation();
                     onDeleteConversation(conversation.id);
                   }}
-                  className="ml-2 p-1 rounded hover:bg-destructive/20 text-destructive opacity-70 group-hover:opacity-100"
+                  className="ml-2 p-1 rounded-full bg-destructive text-white hover:bg-destructive/80 transition"
                   title="Delete this chat"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -121,10 +122,10 @@ export default function ConversationSidebar({
         )}
       </div>
 
-      {/* Logout Button */}
-      <InstallPWAButton />
-      <div className="border-t border-sidebar-border p-4">
-        <Button variant="outline" onClick={onLogout} className="w-full gap-2" size="sm">
+      {/* Sticky bottom actions: Install App + Sign Out */}
+      <div className="px-4 pb-4 mt-auto sticky bottom-0 bg-sidebar flex flex-col gap-2">
+        <InstallPWAButton />
+        <Button variant="outline" onClick={onLogout} className="w-full gap-2 rounded-lg" size="sm">
           <LogOut className="w-4 h-4" />
           Sign Out
         </Button>
