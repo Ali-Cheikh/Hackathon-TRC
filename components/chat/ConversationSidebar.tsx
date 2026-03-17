@@ -4,6 +4,7 @@ import { Conversation } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Plus, LogOut, Menu, X, Trash2, Settings } from 'lucide-react';
 import { useState } from 'react';
+import InstallPWAButton from '@/components/ui/InstallPWAButton';
 
 interface ConversationSidebarProps {
   conversations: Conversation[];
@@ -121,6 +122,7 @@ export default function ConversationSidebar({
       </div>
 
       {/* Logout Button */}
+      <InstallPWAButton />
       <div className="border-t border-sidebar-border p-4">
         <Button variant="outline" onClick={onLogout} className="w-full gap-2" size="sm">
           <LogOut className="w-4 h-4" />
