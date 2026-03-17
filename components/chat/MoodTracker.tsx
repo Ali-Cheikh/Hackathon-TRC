@@ -45,7 +45,7 @@ export default function MoodTracker({ isOpen, onClose, onSubmit, isLoading = fal
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="w-full max-w-full sm:max-w-md p-2 sm:p-6">
         <DialogHeader>
           <DialogTitle>How are you feeling?</DialogTitle>
           <DialogDescription>
@@ -57,12 +57,12 @@ export default function MoodTracker({ isOpen, onClose, onSubmit, isLoading = fal
           {/* Mood Selection */}
           <FieldGroup>
             <FieldLabel>Current Mood</FieldLabel>
-            <div className="grid grid-cols-5 gap-2">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
               {moods.map((mood) => (
                 <button
                   key={mood.value}
                   onClick={() => setSelectedMood(mood.value)}
-                  className={`p-2 rounded-lg border-2 transition-all ${
+                  className={`p-3 sm:p-2 rounded-lg border-2 transition-all w-full ${
                     selectedMood === mood.value
                       ? `${mood.color} border-opacity-100 scale-105`
                       : 'border-border hover:border-primary'

@@ -251,35 +251,20 @@ export default function ChatPage() {
           onDeleteConversation={handleDeleteConversation}
           isOpen={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
+          onShowMoodTracker={() => setShowMoodTracker(true)}
+          onShowSettings={() => router.push('/chat/settings')}
         />
       </div>
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {activeConversation ? (
-          <>
-            <ChatInterface
-              messages={messages}
-              onSendMessage={handleSendMessage}
-              isLoading={loading}
-              conversationTitle={activeConversation.title}
-            />
-
-            {/* Actions Bar */}
-            <div className="border-t border-border p-4 bg-card flex gap-2 flex-wrap">
-              <Button variant="outline" size="sm" onClick={() => setShowMoodTracker(true)}>
-                Log Mood
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => router.push('/chat/settings')}
-                className="ml-auto"
-              >
-                <Settings className="w-4 h-4" />
-              </Button>
-            </div>
-          </>
+          <ChatInterface
+            messages={messages}
+            onSendMessage={handleSendMessage}
+            isLoading={loading}
+            conversationTitle={activeConversation.title}
+          />
         ) : (
           <div className="flex-1 flex items-center justify-center">
             <p className="text-muted-foreground">Loading...</p>
