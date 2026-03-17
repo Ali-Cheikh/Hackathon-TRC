@@ -16,6 +16,7 @@ interface ConversationSidebarProps {
   onClose?: () => void;
   onShowMoodTracker?: () => void;
   onShowSettings?: () => void;
+  onShowMoodTrends?: () => void;
 }
 
 export default function ConversationSidebar({
@@ -29,6 +30,7 @@ export default function ConversationSidebar({
   onClose,
   onShowMoodTracker = () => {},
   onShowSettings = () => {},
+  onShowMoodTrends = () => {},
 }: ConversationSidebarProps) {
   return (
     <div
@@ -87,6 +89,10 @@ export default function ConversationSidebar({
         <Button onClick={onShowSettings} className="w-full gap-2 hidden md:flex" variant="outline" size="sm">
           <Settings className="w-4 h-4" />
           Settings
+        </Button>
+        <Button onClick={onShowMoodTrends} className="w-full gap-2 hidden md:flex" variant="outline" size="sm">
+          📈
+          Mood Trends
         </Button>
       </div>
 

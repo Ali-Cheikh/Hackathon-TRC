@@ -10,6 +10,7 @@ import ChatInterface from '@/components/chat/ChatInterface';
 import ConversationSidebar from '@/components/chat/ConversationSidebar';
 import MoodTracker from '@/components/chat/MoodTracker';
 import CrisisAlert from '@/components/chat/CrisisAlert';
+import MoodTrends from '@/components/chat/MoodTrends';
 import { Button } from '@/components/ui/button';
 import { Menu, Settings } from 'lucide-react';
 
@@ -23,10 +24,10 @@ export default function ChatPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showMoodTracker, setShowMoodTracker] = useState(false);
   const [showCrisisAlert, setShowCrisisAlert] = useState(false);
-  const [crisisAlertData, setCrisisAlertData] = useState<{ severity: 'low' | 'medium' | 'high'; keywords: string[] }>({
-    severity: 'low',
-    keywords: [],
-  });
+  const [crisisAlertData, setCrisisAlertData] = useState<{ severity: 'low' | 'medium' | 'high'; keywords: string[] }>(
+    { severity: 'low', keywords: [] }
+  );
+  const [showMoodTrends, setShowMoodTrends] = useState(false);
 
   function handleDeleteConversation(id: string) {
     setConversations((prev) => {
@@ -253,6 +254,7 @@ export default function ChatPage() {
           onClose={() => setSidebarOpen(false)}
           onShowMoodTracker={() => setShowMoodTracker(true)}
           onShowSettings={() => router.push('/chat/settings')}
+          onShowMoodTrends={() => setShowMoodTrends(true)}
         />
       </div>
 
@@ -280,6 +282,15 @@ export default function ChatPage() {
         severity={crisisAlertData.severity}
         keywords={crisisAlertData.keywords}
       />
+      {user && activeConversation && (
+        <div className={showMoodTrends ? "fixed inset-0 z-50 flex items-center justify-center bg-black/40" : "hidden"}>
+          <MoodTrends
+            user={user}
+            conversationId={activeConversation.id}
+            onClose={() => setShowMoodTrends(false)}
+          />
+        </div>
+      )}
     </div>
   );
 }
