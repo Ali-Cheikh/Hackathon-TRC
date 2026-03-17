@@ -14,7 +14,7 @@ import { getCrisisResources } from '@/lib/crisisResources';
 export default function SettingsPage() {
       // ...existing code...
       // Import InstallPWAButton
-      const InstallPWAButton = require('@/components/ui/InstallPWAButton').default;
+      import InstallPWAButton from '@/components/ui/InstallPWAButton';
     // Export chats handler
     const handleExportChats = () => {
       const conversations = localStorage.getItem('campus_ai_buddy_conversations');
@@ -81,12 +81,11 @@ export default function SettingsPage() {
   }, [router]);
 
   const handleThemeChange = (newTheme: 'light' | 'dark') => {
-    setTheme(newTheme);
-    localStorage.setItem('campus_ai_buddy_theme', newTheme);
+    // Only allow toggling to dark mode, not untoggling
     if (newTheme === 'dark') {
+      setTheme('dark');
+      localStorage.setItem('campus_ai_buddy_theme', 'dark');
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
     }
   };
 
@@ -278,7 +277,9 @@ export default function SettingsPage() {
         </Button>
 
         {/* Install App Button for Phone */}
-        <InstallPWAButton />
+        <div className="w-full mb-2">
+          <InstallPWAButton />
+        </div>
 
         {/* Export/Import Chats */}
         <div className="flex gap-2 w-full">
