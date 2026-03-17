@@ -29,13 +29,13 @@
   --chart-4: #111;
   --chart-5: #fff;
   --radius: 0.625rem;
-  --sidebar: #f5e8c7;
+  --sidebar: #fff;
   --sidebar-foreground: #1e3a8a;
   --sidebar-primary: #1e3a8a;
   --sidebar-primary-foreground: #fff;
   --sidebar-accent: #1e3a8a;
   --sidebar-accent-foreground: #fff;
-  --sidebar-border: #e5e7eb;
+  --sidebar-border: #111;
   --sidebar-ring: #1e3a8a;
 }
 
