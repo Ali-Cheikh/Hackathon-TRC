@@ -21,14 +21,16 @@ University students face high levels of stress, anxiety, and burnout. Traditiona
 
 ## ✅ Key Features
 
-- **User Authentication**: Secure sign up & login
-- **AI Chat Support**: Contextual, empathetic conversations
-- **Mood Tracking**: Log mood levels with intensity and optional notes
-- **Crisis Detection**: Real-time monitoring with localized resources
-- **Conversation History**: Unlimited chat persistence with smart titles
-- **Mobile-First Design**: Optimized for phones, tablets, and desktop
-- **Dark Mode**: Built-in theme switching
-- **Settings**: User profile and preferences management
+ - **User Authentication**: Secure sign up & login
+ - **AI Chat Support**: Contextual, empathetic conversations
+ - **Mood Tracking**: Log mood levels with intensity and optional notes
+ - **Crisis Detection**: Real-time monitoring with localized resources
+ - **Conversation History**: Unlimited chat persistence with smart titles
+ - **Mobile-First Design**: Optimized for phones, tablets, and desktop
+ - **Dark Mode**: Built-in theme switching
+ - **Settings**: User profile and preferences management
+ - **Export/Import Chats**: Download your chat history as a file and restore it anytime
+ - **Install App**: Easily install the app on your phone for offline access
 
 
 ## 🚀 How to Use Campus AI Buddy
@@ -52,6 +54,10 @@ University students face high levels of stress, anxiety, and burnout. Traditiona
 5. **Personalize Your Experience**
    - Switch between light and dark mode.
    - Manage your profile and preferences in the settings.
+6. **Export/Import Chats**
+   - Go to Settings to download your chat history or restore it from a file.
+7. **Install App**
+   - In Settings, tap "Install App" to add Campus AI Buddy to your phone for easy access.
 
 
 ## 🌟 Why Use Campus AI Buddy?

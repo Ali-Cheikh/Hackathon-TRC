@@ -21,14 +21,16 @@ University students face escalating levels of academic stress, anxiety, and burn
 
 ## ✅ Features
 
-- **🔐 User Authentication**: Secure sign up & login
-- **🤖 AI Chat Support**: Contextual, empathetic conversations
-- **📊 Mood Tracking**: Log mood levels with intensity and optional notes
-- **🚨 Crisis Detection**: Real-time monitoring with localized resources
-- **💬 Conversation History**: Unlimited chat persistence with smart titles
-- **📱 Mobile-First Design**: Optimized for phones, tablets, and desktop
-- **🌙 Dark Mode**: Built-in theme switching
-- **⚙️ Settings**: User profile and preferences management
+ - **🔐 User Authentication**: Secure sign up & login
+ - **🤖 AI Chat Support**: Contextual, empathetic conversations
+ - **📊 Mood Tracking**: Log mood levels with intensity and optional notes
+ - **🚨 Crisis Detection**: Real-time monitoring with localized resources
+ - **💬 Conversation History**: Unlimited chat persistence with smart titles
+ - **📱 Mobile-First Design**: Optimized for phones, tablets, and desktop
+ - **🌙 Dark Mode**: Built-in theme switching
+ - **⚙️ Settings**: User profile and preferences management
+ - **📤 Export/Import Chats**: Download your chat history as a file and restore it anytime
+ - **📲 Install App**: Easily install the app on your phone for offline access
 
 
 ## 🌟 How It Works
@@ -37,6 +39,8 @@ University students face escalating levels of academic stress, anxiety, and burn
 2. **Start Chatting**: The AI Buddy responds empathetically to your messages. Conversations are automatically titled. Try mentioning stress, anxiety, or academic concerns.
 3. **Track Your Mood**: Log your mood daily and view your mood history and patterns.
 4. **Access Resources**: Crisis keywords trigger automatic resource suggestions, with localized support for Tunisian students.
+5. **Export/Import Chats**: Go to Settings to download your chat history or restore it from a file.
+6. **Install App**: In Settings, tap "Install App" to add Campus AI Buddy to your phone for easy access.
 
 
 ## 🧩 Key Benefits
